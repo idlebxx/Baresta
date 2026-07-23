@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحقق من OTP - Mr. Barista</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container glass-morphism">
+        <div class="login-header">
+            <img src="https://via.placeholder.com/100x100/C9A84C/FFFFFF?text=MB" alt="Mr. Barista Logo">
+            <h2>تحقق من هويتك</h2>
+            <p>أدخل رمز التحقق المرسل إلى بريدك الإلكتروني</p>
+        </div>
+        
+        <form id="otpForm" class="login-form">
+            <div class="form-group">
+                <i class="fas fa-shield-alt"></i>
+                <input type="text" id="otpCode" placeholder="رمز OTP (6 أرقام)" maxlength="6" required>
+            </div>
+            <div class="otp-timer">
+                <i class="fas fa-clock"></i>
+                <span id="otpTimer">5:00</span>
+            </div>
+            <button type="submit" class="btn-primary">تحقق</button>
+            <div class="login-footer">
+                <a href="#" id="resendOTP">إعادة إرسال الرمز</a>
+            </div>
+            <div id="otpMessage" class="login-message"></div>
+        </form>
+    </div>
+
+    <script src="js/emailjs-config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
