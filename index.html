@@ -1,223 +1,152 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mr. Barista | كافيه وصالة ألعاب منذ 2020</title>
-<meta name="description" content="Mr. Barista - كافيه فاخر منذ 2020 يقدّم أفضل المشروبات والحلويات، وصالة ألعاب Barista Game في أريحا، إدلب.">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Barista - كافيه فاخر</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+    <!-- شريط التنقل -->
+    <nav class="navbar glass-morphism">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50/C9A84C/FFFFFF?text=Mr.Barista" alt="Mr. Barista">
+            </div>
+            <div class="nav-links">
+                <a href="#hero">الرئيسية</a>
+                <a href="#menu">القائمة</a>
+                <a href="#games">الألعاب</a>
+                <a href="#offers">العروض</a>
+                <a href="#contact">اتصل بنا</a>
+                <a href="login.html" class="admin-btn"><i class="fas fa-crown"></i> لوحة التحكم</a>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-<!-- ===================== شريط العرض العلوي ===================== -->
-<div class="top-banner" id="topBanner">
-  <div class="banner-inner container">
-    <span id="bannerText">✨ <strong>عرض الافتتاح:</strong> خصم 20% على جميع المشروبات الساخنة</span>
-    <div class="banner-countdown" id="bannerCountdown">
-      <span data-unit="d"><b>يوم</b>00</span>
-      <span data-unit="h"><b>ساعة</b>00</span>
-      <span data-unit="m"><b>دقيقة</b>00</span>
-      <span data-unit="s"><b>ثانية</b>00</span>
-    </div>
-  </div>
-</div>
+    <!-- البانر العلوي -->
+    <section id="banner" class="banner-section">
+        <div class="banner-content" id="bannerContent">
+            <h2>خصم 20% على جميع المشروبات الساخنة</h2>
+            <div class="countdown" id="bannerCountdown">
+                <span id="days">00</span>:
+                <span id="hours">00</span>:
+                <span id="minutes">00</span>:
+                <span id="seconds">00</span>
+            </div>
+        </div>
+    </section>
 
-<!-- ===================== شريط التنقل ===================== -->
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="#hero" class="brand">
-      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="46" fill="none" stroke="var(--gold-500)" stroke-width="4"/>
-        <path d="M30 46 a10 10 0 0 0 0 14 h16 v-14z" fill="var(--gold-500)"/>
-        <path d="M70 46 a10 10 0 0 1 0 14 h-16 v-14z" fill="var(--gold-500)"/>
-        <path d="M36 68 q14 12 28 0" stroke="var(--gold-500)" stroke-width="5" fill="none" stroke-linecap="round"/>
-      </svg>
-      <span>
-        <span class="brand-name" id="siteName">Mr. Barista</span>
-        <span class="brand-since">SINCE 2020</span>
-      </span>
+    <!-- القسم الرئيسي -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1 class="neon-text">Mr. Barista</h1>
+                <p>منذ 2020 - نقدم لك أفضل تجربة قهوة وألعاب</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('menu')">استكشف القائمة</button>
+                    <button class="btn-secondary" onclick="scrollToSection('games')">جرب الألعاب</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400/C9A84C/FFFFFF?text=Coffee+%26+Games" alt="Mr. Barista Hero">
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section id="menu" class="menu-section">
+        <div class="section-header">
+            <h2>قائمتنا الفاخرة</h2>
+            <p>اكتشف تشكيلتنا المميزة من المشروبات والحلويات</p>
+        </div>
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="all">الكل</button>
+            <button class="category-btn" data-category="مشروبات ساخنة">مشروبات ساخنة</button>
+            <button class="category-btn" data-category="مشروبات باردة">مشروبات باردة</button>
+            <button class="category-btn" data-category="حلويات">حلويات</button>
+            <button class="category-btn" data-category="ساندويشات">ساندويشات</button>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- سيتم توليدها بواسطة JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم الألعاب -->
+    <section id="games" class="games-section">
+        <div class="section-header">
+            <h2>صالة ألعاب Barista Game</h2>
+            <p>استمتع بأفضل الألعاب مع قهوتك المفضلة</p>
+        </div>
+        <div class="games-grid" id="gamesGrid">
+            <!-- سيتم توليدها بواسطة JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم العروض -->
+    <section id="offers" class="offers-section">
+        <div class="section-header">
+            <h2>عروضنا المميزة</h2>
+            <p>عروض حصرية لا تفوتها</p>
+        </div>
+        <div class="offers-grid" id="offersGrid">
+            <!-- سيتم توليدها بواسطة JavaScript -->
+        </div>
+    </section>
+
+    <!-- قسم اتصل بنا -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2>اتصل بنا</h2>
+            <p>نحن هنا لخدمتك دائماً</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" rows="5" placeholder="رسالتك"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>عمان، الأردن</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+962 79 123 4567</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@mrbarista.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- زر واتساب -->
+    <a href="https://wa.me/962791234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#menu">القائمة</a></li>
-      <li><a href="#games">صالة الألعاب</a></li>
-      <li><a href="#offers">العروض</a></li>
-      <li><a href="#contact">اتصل بنا</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري">🌙</button>
-      <button class="burger" id="burgerBtn" aria-label="القائمة"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-
-<!-- ===================== الواجهة الرئيسية ===================== -->
-<header class="hero" id="hero">
-  <div class="bean-field" id="beanField"></div>
-
-  <div class="container hero-inner">
-    <div class="hero-copy">
-      <span class="eyebrow">كافيه Mr. Barista — منذ 2020</span>
-      <h1 class="hero-title">رشفة تجمع بين <em>الأصالة</em><br>والمذاق الفاخر</h1>
-      <p class="hero-text">في قلب أريحا، نقدّم لكم قهوة محمّصة بعناية، حلويات طازجة، وأجواء دافئة تليق بلحظاتكم — والآن مع صالة <strong>Barista Game</strong> لأمسيات لا تُنسى.</p>
-      <div class="hero-ctas">
-        <a href="#menu" class="btn btn-gold">تصفّح القائمة</a>
-        <a href="#games" class="btn btn-ghost">احجز في صالة الألعاب</a>
-      </div>
-    </div>
-
-    <div class="hero-mark" aria-hidden="true">
-      <div class="mark-ring"></div>
-      <div class="mark-ring inner"></div>
-      <div class="mark-glow"></div>
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path class="steam-path d1" d="M78 60 C70 48, 86 40, 78 26" stroke="#f0cd85" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path class="steam-path d2" d="M122 60 C114 48, 130 40, 122 26" stroke="#f0cd85" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M56 82 a18 18 0 0 0 0 30 h32 v-30z" fill="#f0cd85"/>
-        <path d="M144 82 a18 18 0 0 1 0 30 h-32 v-30z" fill="#f0cd85"/>
-        <path d="M64 128 q36 26 72 0" stroke="#f0cd85" stroke-width="9" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
-  </div>
-
-  <div class="scroll-cue"><span></span>مرّر للأسفل</div>
-</header>
-
-<!-- ===================== قسم القائمة ===================== -->
-<main>
-<section class="section-pad" id="menu">
-  <div class="container">
-    <span class="eyebrow">قائمتنا</span>
-    <h2 class="section-title reveal">اختر نكهتك المفضّلة</h2>
-    <p class="section-sub reveal">من القهوة الساخنة إلى المشروبات المثلجة، ومن الحلويات إلى الساندويشات — كل شيء يُحضَّر طازجاً كل يوم.</p>
-
-    <div class="menu-tabs" id="menuTabs">
-      <button class="menu-tab active" data-cat="all">الكل</button>
-      <button class="menu-tab" data-cat="hot">مشروبات ساخنة</button>
-      <button class="menu-tab" data-cat="cold">مشروبات باردة</button>
-      <button class="menu-tab" data-cat="sweets">حلويات</button>
-      <button class="menu-tab" data-cat="sandwiches">ساندويشات</button>
-    </div>
-
-    <div class="grid reveal" id="productsGrid">
-      <!-- تُملأ ديناميكياً عبر script.js من database.json -->
-    </div>
-  </div>
-</section>
-
-<!-- ===================== قسم صالة الألعاب ===================== -->
-<section class="section-pad games-section" id="games">
-  <div class="container">
-    <span class="eyebrow">Barista Game</span>
-    <h2 class="section-title reveal">صالة ألعاب بأجواء القهوة</h2>
-    <p class="section-sub reveal">استرخِ مع أصدقائك، العب، واستمتع بمشروبك المفضّل في نفس المكان.</p>
-
-    <div class="grid reveal" id="gamesGrid">
-      <!-- تُملأ ديناميكياً -->
-    </div>
-
-    <div class="booking-panel reveal">
-      <div class="booking-copy">
-        <h3>احجز وقتك الآن</h3>
-        <p>عبّئ النموذج وسنؤكد حجزك عبر واتساب في أقرب وقت ممكن.</p>
-      </div>
-      <form class="booking-form" id="bookingForm">
-        <input type="text" name="name" placeholder="الاسم الكامل" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <select name="game" id="bookingGameSelect" required>
-          <option value="" disabled selected>اختر اللعبة</option>
-        </select>
-        <input type="datetime-local" name="datetime" required>
-        <textarea name="notes" rows="2" placeholder="ملاحظات إضافية (اختياري)"></textarea>
-        <button type="submit" class="btn btn-gold">تأكيد الحجز</button>
-        <p class="form-msg" id="bookingMsg"></p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== قسم العروض ===================== -->
-<section class="section-pad" id="offers">
-  <div class="container">
-    <span class="eyebrow">عروض حصرية</span>
-    <h2 class="section-title reveal">لا تفوّت هذه العروض</h2>
-    <p class="section-sub reveal">عروض محدودة المدة — سارع بالاستفادة قبل انتهاء الوقت.</p>
-
-    <div class="offers-grid reveal" id="offersGrid">
-      <!-- تُملأ ديناميكياً -->
-    </div>
-  </div>
-</section>
-
-<!-- ===================== قسم اتصل بنا ===================== -->
-<section class="section-pad" id="contact">
-  <div class="container">
-    <span class="eyebrow">تواصل معنا</span>
-    <h2 class="section-title reveal">بانتظار زيارتكم</h2>
-    <p class="section-sub reveal">نسعد باستقبالكم يومياً، أو تواصلوا معنا مباشرة عبر واتساب.</p>
-
-    <div class="contact-grid reveal">
-      <div class="contact-info">
-        <div class="contact-row">
-          <span class="ic">📍</span>
-          <div><h4>العنوان</h4><p id="addressText">سوريا - إدلب - أريحا، طريق الجسر، مفرق جامع سالم</p></div>
-        </div>
-        <div class="contact-row">
-          <span class="ic">🕒</span>
-          <div><h4>أوقات الدوام</h4><p>يومياً من الساعة 9 صباحاً حتى 1 بعد منتصف الليل</p></div>
-        </div>
-        <div class="contact-row">
-          <span class="ic">📞</span>
-          <div><h4>واتساب</h4><p id="phoneText">+963 900 000 000</p></div>
-        </div>
-        <div class="contact-row">
-          <span class="ic">📷</span>
-          <div><h4>إنستغرام</h4><p>barista_cafe_syr</p></div>
-        </div>
-      </div>
-
-      <div class="map-frame">
-        <iframe title="خريطة موقع Mr. Barista" src="https://maps.google.com/maps?q=35.8167,36.6083&z=15&output=embed" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ===================== زر واتساب عائم ===================== -->
-<a href="#" id="whatsappBtn" class="whatsapp-float" target="_blank" rel="noopener" aria-label="راسلنا عبر واتساب">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.28-1.39c1.45.79 3.08 1.21 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.11h-.01c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.13.82.84-3.05-.2-.31a8.19 8.19 0 0 1-1.26-4.34c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.26.86 5.82 2.42a8.17 8.17 0 0 1 2.41 5.81c0 4.53-3.69 8.2-8.18 8.2zm4.51-6.14c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.58.12.17 1.75 2.67 4.24 3.75.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
-</a>
-
-<div class="toast" id="toast"></div>
-
-<!-- ===================== التذييل ===================== -->
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <span class="brand-name" style="font-size:1.3rem;">Mr. Barista</span>
-      <p>منذ 2020، نقدّم تجربة قهوة استثنائية وأجواء تجمع بين الدفء والفخامة في مدينة أريحا.</p>
-    </div>
-    <div>
-      <h5>روابط سريعة</h5>
-      <a href="#menu">القائمة</a>
-      <a href="#games">صالة الألعاب</a>
-      <a href="#offers">العروض</a>
-      <a href="#contact">اتصل بنا</a>
-    </div>
-    <div>
-      <h5>تواصل معنا</h5>
-      <a href="#" id="footerWhatsapp">واتساب</a>
-      <a href="https://instagram.com/barista_cafe_syr" target="_blank" rel="noopener">إنستغرام</a>
-      <a id="footerAddress">أريحا، طريق الجسر، مفرق جامع سالم</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    © <span id="year"></span> Mr. Barista — جميع الحقوق محفوظة
-  </div>
-</footer>
-
-<script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/emailjs-config.js"></script>
 </body>
 </html>
