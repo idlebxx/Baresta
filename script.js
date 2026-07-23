@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mr. Barista — script.js (معدل للاتصال بـ JsonBin)
+   Mr. Barista — script.js (معدل للاتصال بـ Pastebin)
    ========================================================================== */
 
 const CATEGORY_LABELS = {
@@ -9,9 +9,9 @@ const CATEGORY_LABELS = {
     sandwiches: "ساندويشات"
 };
 
-// ===== إعدادات JsonBin =====
-const JSONBIN_BIN_ID = "6a619e77f5f4af5e29b40608";
-const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`;
+// ===== إعدادات Pastebin =====
+// 🔥 ضع رابط Pastebin الخام هنا (مثل: https://pastebin.com/raw/ABC123)
+const PASTEBIN_RAW_URL = "https://pastebin.com/raw/24SejQXqUSuklm_2Fdq4Nh-TeC3MCab1";
 
 let CONFIG = null;
 let DB = null;
@@ -19,10 +19,11 @@ let DB = null;
 /* -------------------- تحميل البيانات -------------------- */
 async function loadData() {
     try {
-        // قراءة البيانات من JsonBin
-        const dbResponse = await fetch(JSONBIN_URL);
-        const result = await dbResponse.json();
-        DB = result.record || result;
+        // قراءة البيانات من Pastebin
+        const dbResponse = await fetch(PASTEBIN_RAW_URL);
+        const text = await dbResponse.text();
+        DB = JSON.parse(text);
+        console.log("✅ تم تحميل البيانات من Pastebin");
         
         // قراءة الإعدادات من الموقع
         try {
@@ -32,7 +33,7 @@ async function loadData() {
             CONFIG = fallbackConfig();
         }
     } catch (err) {
-        console.warn("تعذّر تحميل البيانات من JsonBin، استخدام بيانات افتراضية", err);
+        console.warn("تعذّر تحميل البيانات من Pastebin، استخدام بيانات افتراضية", err);
         CONFIG = fallbackConfig();
         DB = fallbackDB();
     }
@@ -320,9 +321,20 @@ function fallbackConfig() {
 
 function fallbackDB() {
     return {
-        products: [{ id: 1, name: "قهوة تركية", description: "قهوة تركية أصيلة", price: 1.5, image: "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?q=80&w=800", category: "hot" }],
-        games: [{ id: 1, name: "بلايستيشن 5", description: "أحدث الإصدارات", players: "1-4", price_per_hour: 3, image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800" }],
-        offers: [{ id: 1, name: "خصم الافتتاح", description: "خصم 20% لفترة محدودة", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200", end_date: new Date(Date.now() + 5 * 86400000).toISOString() }]
+        next_ids: { product: 1, offer: 1, game: 1 },
+        products: [
+            { id: 1, name: "قهوة تركية", description: "قهوة تركية أصيلة", price: 1.5, image: "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?q=80&w=800", category: "hot" },
+            { id: 2, name: "لاتيه", description: "إسبريسو مع حليب", price: 2.5, image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=800", category: "hot" }
+        ],
+        games: [
+            { id: 1, name: "بلايستيشن 5", description: "أحدث الإصدارات", players: "1-4", price_per_hour: 3, image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=800" }
+        ],
+        offers: [
+            { id: 1, name: "خصم الافتتاح", description: "خصم 20% لفترة محدودة", image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200", end_date: new Date(Date.now() + 5 * 86400000).toISOString() }
+        ],
+        bookings: [],
+        subscribers: [],
+        stats: { visitors: 0 }
     };
 }
 
