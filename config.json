@@ -1,0 +1,20 @@
+{
+  "bot_token": "8661333031:AAE42qwKL2HKg4iLQDXFBw9keGgYbVHBxrc",
+  "admin_ids": [
+    111111111
+  ],
+  "site_name": "Mr. Barista",
+  "site_tagline": "لذة المذاق ☕😍",
+  "banner": {
+    "text": "افتتاح فرعنا الجديد وصالة Barista Game 🎮 خصم 20% لأول أسبوع!",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600",
+    "end_date": "2026-08-15T21:00:00"
+  },
+  "address": "سوريا - إدلب - أريحا، طريق الجسر، مفرق جامع سالم",
+  "whatsapp_number": "963900000000",
+  "map_coordinates": {
+    "lat": 35.8167,
+    "lng": 36.6083
+  },
+  "since_year": 2020
+}
