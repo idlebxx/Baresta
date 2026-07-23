@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - Mr. Barista</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container glass-morphism">
+        <div class="login-header">
+            <img src="https://via.placeholder.com/100x100/C9A84C/FFFFFF?text=MB" alt="Mr. Barista Logo">
+            <h2>Mr. Barista</h2>
+            <p>تسجيل الدخول إلى لوحة التحكم</p>
+        </div>
+        
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="loginEmail" placeholder="البريد الإلكتروني" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="loginPassword" placeholder="كلمة المرور" required>
+                <i class="fas fa-eye toggle-password"></i>
+            </div>
+            <button type="submit" class="btn-primary">تسجيل الدخول</button>
+            <div class="login-footer">
+                <a href="#" id="forgotPassword">نسيت كلمة المرور؟</a>
+            </div>
+            <div id="loginMessage" class="login-message"></div>
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>
