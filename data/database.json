@@ -1,0 +1,95 @@
+{
+  "admin": {
+    "email": "idlebx5@gmail.com",
+    "password": "Hamsa&moohamed%idlebx&1236929",
+    "otp": "",
+    "otp_expiry": ""
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "كابتشينو",
+      "description": "قهوة إيطالية أصيلة بالحليب",
+      "price": 5.0,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Cappuccino",
+      "category": "مشروبات ساخنة"
+    },
+    {
+      "id": 2,
+      "name": "لاتيه",
+      "description": "قهوة ناعمة مع حليب مبخر",
+      "price": 4.5,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Latte",
+      "category": "مشروبات ساخنة"
+    },
+    {
+      "id": 3,
+      "name": "شوكولاتة ساخنة",
+      "description": "شوكولاتة بلجيكية فاخرة",
+      "price": 3.5,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Hot+Chocolate",
+      "category": "مشروبات ساخنة"
+    },
+    {
+      "id": 4,
+      "name": "موكا",
+      "description": "قهوة مع شوكولاتة وحليب",
+      "price": 5.5,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Mocha",
+      "category": "مشروبات ساخنة"
+    },
+    {
+      "id": 5,
+      "name": "عصير برتقال طازج",
+      "description": "عصير برتقال طازج 100%",
+      "price": 4.0,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Orange+Juice",
+      "category": "مشروبات باردة"
+    },
+    {
+      "id": 6,
+      "name": "تشيز كيك",
+      "description": "تشيز كيك نيويورك الأصلي",
+      "price": 6.0,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Cheesecake",
+      "category": "حلويات"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "name": "بلاي ستيشن 5",
+      "description": "أحدث إصدار مع ألعاب ممتازة",
+      "price_per_hour": 3.0,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=PS5"
+    },
+    {
+      "id": 2,
+      "name": "ننتندو سويتش",
+      "description": "ألعاب عائلية ممتعة",
+      "price_per_hour": 2.5,
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Nintendo"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "name": "عرض الإفطار",
+      "description": "كابتشينو + كرواسون بـ 5 دينار",
+      "image": "https://via.placeholder.com/300x200/C9A84C/FFFFFF?text=Breakfast+Offer",
+      "expiry_date": "2026-08-30T23:59:59",
+      "active": true
+    }
+  ],
+  "banner": {
+    "text": "خصم 20% على جميع المشروبات الساخنة",
+    "image": "https://via.placeholder.com/1200x200/C9A84C/FFFFFF?text=Mr.Barista+Banner",
+    "active": true
+  },
+  "site_settings": {
+    "site_name": "Mr. Barista",
+    "logo": "https://via.placeholder.com/150x50/C9A84C/FFFFFF?text=Mr.Barista",
+    "primary_color": "#C9A84C",
+    "secondary_color": "#2C1810"
+  }
+}
