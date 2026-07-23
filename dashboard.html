@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - Mr. Barista</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- الشريط الجانبي -->
+        <aside class="sidebar glass-morphism">
+            <div class="sidebar-header">
+                <img src="https://via.placeholder.com/50x50/C9A84C/FFFFFF?text=MB" alt="Logo">
+                <h3>Mr. Barista</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="active" data-page="dashboard"><i class="fas fa-chart-pie"></i> لوحة التحكم</a>
+                <a href="#" data-page="products"><i class="fas fa-coffee"></i> المنتجات</a>
+                <a href="#" data-page="games"><i class="fas fa-gamepad"></i> الألعاب</a>
+                <a href="#" data-page="offers"><i class="fas fa-tags"></i> العروض</a>
+                <a href="#" data-page="banner"><i class="fas fa-image"></i> البانر</a>
+                <a href="#" data-page="settings"><i class="fas fa-cog"></i> الإعدادات</a>
+                <a href="#" data-page="users"><i class="fas fa-users"></i> المستخدمين</a>
+                <a href="index.html" data-page="logout"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+            </nav>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2>مرحباً بك في لوحة التحكم</h2>
+                <div class="header-actions">
+                    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <div class="user-info">
+                        <span id="adminEmail">admin@mrbarista.com</span>
+                        <img src="https://via.placeholder.com/40x40/2C1810/FFFFFF?text=A" alt="Admin">
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-pages">
+                <!-- صفحة لوحة التحكم -->
+                <div id="page-dashboard" class="page-content active">
+                    <div class="stats-grid">
+                        <div class="stat-card glass-morphism">
+                            <i class="fas fa-coffee"></i>
+                            <div>
+                                <h3 id="totalProducts">0</h3>
+                                <p>المنتجات</p>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-morphism">
+                            <i class="fas fa-gamepad"></i>
+                            <div>
+                                <h3 id="totalGames">0</h3>
+                                <p>الألعاب</p>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-morphism">
+                            <i class="fas fa-tags"></i>
+                            <div>
+                                <h3 id="totalOffers">0</h3>
+                                <p>العروض</p>
+                            </div>
+                        </div>
+                        <div class="stat-card glass-morphism">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h3 id="totalVisitors">0</h3>
+                                <p>الزوار</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- صفحة المنتجات -->
+                <div id="page-products" class="page-content">
+                    <div class="page-header">
+                        <h3>إدارة المنتجات</h3>
+                        <button class="btn-primary" onclick="showAddProductModal()"><i class="fas fa-plus"></i> إضافة منتج</button>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" id="searchProducts" placeholder="بحث عن منتج...">
+                        <select id="filterCategory">
+                            <option value="all">جميع التصنيفات</option>
+                            <option value="مشروبات ساخنة">مشروبات ساخنة</option>
+                            <option value="مشروبات باردة">مشروبات باردة</option>
+                            <option value="حلويات">حلويات</option>
+                            <option value="ساندويشات">ساندويشات</option>
+                        </select>
+                    </div>
+                    <div class="table-container">
+                        <table id="productsTable">
+                            <thead>
+                                <tr>
+                                    <th>الصورة</th>
+                                    <th>الاسم</th>
+                                    <th>الوصف</th>
+                                    <th>السعر</th>
+                                    <th>التصنيف</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody">
+                                <!-- سيتم توليدها بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- صفحة الألعاب -->
+                <div id="page-games" class="page-content">
+                    <div class="page-header">
+                        <h3>إدارة الألعاب</h3>
+                        <button class="btn-primary" onclick="showAddGameModal()"><i class="fas fa-plus"></i> إضافة لعبة</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="gamesTable">
+                            <thead>
+                                <tr>
+                                    <th>الصورة</th>
+                                    <th>الاسم</th>
+                                    <th>الوصف</th>
+                                    <th>السعر/ساعة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gamesTableBody">
+                                <!-- سيتم توليدها بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- صفحة العروض -->
+                <div id="page-offers" class="page-content">
+                    <div class="page-header">
+                        <h3>إدارة العروض</h3>
+                        <button class="btn-primary" onclick="showAddOfferModal()"><i class="fas fa-plus"></i> إضافة عرض</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="offersTable">
+                            <thead>
+                                <tr>
+                                    <th>الصورة</th>
+                                    <th>الاسم</th>
+                                    <th>الوصف</th>
+                                    <th>تاريخ الانتهاء</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="offersTableBody">
+                                <!-- سيتم توليدها بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- صفحة البانر -->
+                <div id="page-banner" class="page-content">
+                    <div class="page-header">
+                        <h3>إدارة البانر العلوي</h3>
+                    </div>
+                    <form id="bannerForm" class="settings-form">
+                        <div class="form-group">
+                            <label>نص البانر</label>
+                            <input type="text" id="bannerText" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط صورة البانر</label>
+                            <input type="url" id="bannerImage" required>
+                        </div>
+                        <div class="form-group">
+                            <label>تفعيل البانر</label>
+                            <input type="checkbox" id="bannerActive">
+                        </div>
+                        <button type="submit" class="btn-primary">حفظ التغييرات</button>
+                    </form>
+                </div>
+
+                <!-- صفحة الإعدادات -->
+                <div id="page-settings" class="page-content">
+                    <div class="page-header">
+                        <h3>إعدادات الموقع</h3>
+                    </div>
+                    <form id="settingsForm" class="settings-form">
+                        <div class="form-group">
+                            <label>اسم الموقع</label>
+                            <input type="text" id="siteName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط الشعار</label>
+                            <input type="url" id="siteLogo" required>
+                        </div>
+                        <div class="form-group">
+                            <label>اللون الأساسي</label>
+                            <input type="color" id="primaryColor">
+                        </div>
+                        <div class="form-group">
+                            <label>اللون الثانوي</label>
+                            <input type="color" id="secondaryColor">
+                        </div>
+                        <button type="submit" class="btn-primary">حفظ التغييرات</button>
+                    </form>
+                </div>
+
+                <!-- صفحة المستخدمين -->
+                <div id="page-users" class="page-content">
+                    <div class="page-header">
+                        <h3>إدارة المستخدمين</h3>
+                        <button class="btn-primary" onclick="showAddUserModal()"><i class="fas fa-plus"></i> إضافة مشرف</button>
+                    </div>
+                    <div class="table-container">
+                        <table id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th>البريد الإلكتروني</th>
+                                    <th>النوع</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- سيتم توليدها بواسطة JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- مودال الإضافة/التعديل -->
+    <div id="modal" class="modal">
+        <div class="modal-content glass-morphism">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toastContainer"></div>
+
+    <script src="js/emailjs-config.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
